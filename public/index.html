@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="hu">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Adatok feltöltése</title>
+  </head>
+  <body>
+    <form action="api/book/feltolt" method="post" enctype="multipart/form-data">
+      <label for="szerzo">Szerző:</label>
+      <input type="text" name="szerzo" id="szerzo" />
+      <label for="cim">Cím: </label>
+      <input type="text" name="cim" id="cim" />
+      <input type="file" name="kep" id="kep" />
+      <input type="submit" value="Feltöltés" />
+    </form>
+  </body>
+</html>
