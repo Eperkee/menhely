@@ -1,7 +1,12 @@
 import React from "react";
+import Navbar from "../components/Navbar";
 
 const Home = () => {
-  return <main>Ablak</main>;
+  return (
+    <main>
+      <Navbar />
+    </main>
+  );
 };
 
 export default Home;

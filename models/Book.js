@@ -10,6 +10,14 @@ const BookSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    kategoria: {
+      type: String,
+      required: true,
+    },
+    ar: {
+      type: Number,
+      required: true,
+    },
     kep: {
       type: String,
     },
@@ -17,6 +25,6 @@ const BookSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-const BookModel = mongoose.model("book", BookSchema);
+const BookModel = mongoose.model("books", BookSchema);
 
 module.exports = BookModel;

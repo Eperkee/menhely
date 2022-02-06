@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Adatok módosítása</title>
+  </head>
+  <body>
+    <h1>Adatok</h1>
+    <% books.map(book => { %>
+    <p><%= book.szerzo %></p>
+    <p><%= book.cim %></p>
+    <p><%= book.kategoria %></p>
+    <p><%= book.ar %></p>
+    <p><%= book.kep %></p>
+    <button type="submit" onclick="torol(`<%= book.kep %>`)">Töröl</button>
+    <% }) %>
+    <a href="/feltoltes">Feltöltés</a>
+    <script>
+      function torol(kep) {
+        fetch(`/api/book/torol/${kep}`, { method: "DELETE" }).then(() =>
+          console.log(kep)
+        );
+      }
+    </script>
+  </body>
+</html>
