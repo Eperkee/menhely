@@ -9,18 +9,22 @@
   <body>
     <h1>Adatok feltöltése</h1>
     <form action="api/book/feltolt" method="post" enctype="multipart/form-data">
-      <label for="szerzo">Szerző:</label>
-      <input type="text" name="szerzo" id="szerzo" />
-      <label for="cim">Cím: </label>
-      <input type="text" name="cim" id="cim" />
-      <label for="kategoria">Kategória: </label>
-      <select name="kategoria" id="kategoria">
-        <option value="fantasztikus">Fantasztikus</option>
-        <option value="szepirodalom">Szépirodalom</option>
-        <option value="szakacs">Szakácskönyvek</option>
+      <label for="nev">Név:</label>
+      <input type="text" name="nev" id="nev" />
+      <br>
+      <label for="kor">Kor:</label>
+      <input type="number" name="kor" id="kor" />
+      <label for="fajta">Fajta: </label>
+      <select name="fajta" id="fajta">
+        <option value="tacsko">Tacskó</option>
+        <option value="vizsla">Vizsla</option>
+        <option value="Farkaskutya">Farkaskutya</option>
       </select>
-      <label for="cim">Ár: </label>
-      <input type="number" name="ar" id="ar" />
+      <label for="igen">Igen: </label>
+      <input type="radio" name="ivar" id="igen" value="igen">
+      <label for="nem">Nem: </label>
+      <input type="radio" name="ivar" id="nem" value="nem">
+   
       <input type="file" name="kep" id="kep" />
       <input type="submit" value="Feltöltés" />
     </form>

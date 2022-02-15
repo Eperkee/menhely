@@ -11,16 +11,18 @@ const Fantasztikus = () => {
 
   return (
     <div>
-      <Navbar />
+      {/* <Navbar /> */}
       <div className="container">
+        <h1>Jelenlegi lakóink</h1>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vel accusantium voluptatum maiores perferendis soluta similique possimus consectetur amet doloribus veniam?</p>
         {konyvek.map((work) => {
           const kep = `kepek/${work.kep}`;
           return (
-            work.kategoria === "fantasztikus" && (
+            work.fajta === "vizsla" && (
               <div key={work.kep}>
-                <p>{work.szerzo}</p>
-                <p>{work.cim}</p>
-                <p>{work.ar}</p>
+                <p>{work.nev}</p>
+                <p>{work.kor}</p>
+                <p>{work.fajta}</p>
                 <img src={kep} alt="" />
                 <button
                   onClick={() => {

@@ -9,10 +9,10 @@
   <body>
     <h1>Adatok</h1>
     <% books.map(book => { %>
-    <p><%= book.szerzo %></p>
-    <p><%= book.cim %></p>
-    <p><%= book.kategoria %></p>
-    <p><%= book.ar %></p>
+    <p><%= book.nev %></p>
+    <p><%= book.kor %></p>
+    <p><%= book.fajta %></p>
+    <p><%= book.ivartalanitott %></p>
     <p><%= book.kep %></p>
     <button type="submit" onclick="torol(`<%= book.kep %>`)">Töröl</button>
     <% }) %>

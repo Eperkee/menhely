@@ -10,7 +10,7 @@ const app = express();
 
 // Adatbázis kapcsolat
 mongoose
-  .connect(process.env.MONGO_URL)
+  .connect(process.env.MONGO_URI)
   .then(() => {
     console.log("Sikeres adatbázis csatlakozás!");
   })
@@ -25,9 +25,7 @@ app.use(express.static(path.join(__dirname, "public")));
 app.set("view-engine", "ejs");
 
 // Route-ok
-app.use("/api/user", require("./routes/userRoute"));
 app.use("/api/book", require("./routes/bookRoute"));
-app.use("/api/kartya", require("./routes/kartyaRoute"));
 
 // Route-ok a book-tábla szerkesztéséhez
 const Book = require("./models/Book");

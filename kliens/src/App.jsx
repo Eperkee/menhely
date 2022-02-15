@@ -17,20 +17,20 @@ function App() {
   useEffect(() => {
     axios.get("http://localhost:5000/api/book").then((response) => {
       const data = response.data;
-      // console.log(data);
+      console.log(data);
       dispatch(feltolt({ books: data }));
     });
   }, []);
 
   return (
     <Router>
-      {/* <Navbar /> */}
+      <Navbar />
       <Routes>
         <Route exact path="/" element={<Home />} />
         <Route path="/fantasztikus" element={<Fantasztikus />} />
         <Route path="/szepirodalom" element={<Szepirodalom />} />
         <Route path="/szakacskonyv" element={<Szakacskonyv />} />
-        <Route path="/kartya" element={<Kartya />} />
+        {/* <Route path="/kartya" element={<Kartya />} /> */}
       </Routes>
     </Router>
   );

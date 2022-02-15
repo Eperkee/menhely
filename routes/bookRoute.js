@@ -1,5 +1,4 @@
 const express = require("express");
-const path = require("path");
 const router = express.Router();
 const multer = require("multer");
 const Book = require("../models/Book");
@@ -26,14 +25,15 @@ const fileStorage = multer.diskStorage({
 const upload = multer({ storage: fileStorage });
 
 router.post("/feltolt", upload.single("kep"), async (req, res) => {
-  const szerzo = req.body.szerzo;
-  const cim = req.body.cim;
-  const kategoria = req.body.kategoria;
-  const ar = req.body.ar;
+  // console.log(req.body);
+  const nev = req.body.nev;
+  const kor = req.body.kor;
+  const fajta = req.body.fajta;
+  const ivartalanitott = req.body.ivar;
   const kep = req.file.originalname;
 
   try {
-    const newBook = new Book({ szerzo, cim, kategoria, ar, kep });
+    const newBook = new Book({ nev, kor, fajta, ivartalanitott, kep });
     const konyv = await newBook.save();
     res.redirect("/feltoltes");
   } catch (error) {

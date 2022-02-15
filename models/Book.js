@@ -2,20 +2,20 @@ const mongoose = require("mongoose");
 
 const BookSchema = new mongoose.Schema(
   {
-    szerzo: {
+    nev: {
       type: String,
       required: true,
     },
-    cim: {
-      type: String,
-      required: true,
-    },
-    kategoria: {
-      type: String,
-      required: true,
-    },
-    ar: {
+    kor: {
       type: Number,
+      required: true,
+    },
+    fajta: {
+      type: String,
+      required: true,
+    },
+    ivartalanitott: {
+      type: String,
       required: true,
     },
     kep: {
